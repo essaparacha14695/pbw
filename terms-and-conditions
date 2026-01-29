@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terms & Conditions | Professional Book Writing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <main style="max-width: 900px; margin: 80px auto; padding: 0 20px; line-height: 1.7;">
+    <h1>Terms & Conditions</h1>
+
+    <p>
+      Welcome to Professional Book Writing. By accessing or using our website,
+      you agree to be bound by these Terms and Conditions.
+    </p>
+
+    <h2>Services</h2>
+    <p>
+      We provide ghostwriting, editing, publishing, and related services as
+      outlined on our website.
+    </p>
+
+    <h2>Payments</h2>
+    <p>
+      All payments are required in advance unless otherwise agreed in writing.
+    </p>
+
+    <h2>Intellectual Property</h2>
+    <p>
+      Upon full payment, all rights to the delivered work are transferred to
+      the client.
+    </p>
+
+    <h2>Confidentiality</h2>
+    <p>
+      We treat all client materials as confidential.
+    </p>
+
+    <h2>Limitation of Liability</h2>
+    <p>
+      We are not liable for indirect or consequential damages.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      If you have questions, contact us at support@yourdomain.com
+    </p>
+  </main>
+
+</body>
+</html>
