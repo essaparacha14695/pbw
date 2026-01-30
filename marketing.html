@@ -276,8 +276,241 @@ section {
   padding: 2rem;
   border-radius: 1rem;
 }
-</style>
+/* =====================
+   BASE SECTIONS
+   ===================== */
 
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container.narrow {
+  max-width: 850px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+}
+/* =====================
+   HERO (STEP 3)
+   ===================== */
+
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+/* =====================
+   STEP 4 – INTRO + BENEFITS
+   ===================== */
+
+.lead {
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0.85;
+}
+
+/* Benefits section background */
+.marketing-benefits {
+  background: rgba(255,255,255,0.03);
+}
+
+/* Grid layout */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Cards */
+.benefit-card {
+  background: rgba(255,255,255,0.05);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.benefit-card h4 {
+  margin-bottom: 0.5rem;
+}
+/* =====================
+   STEP 5 – SERVICES
+   ===================== */
+
+.marketing-services .service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+/* Alternate layout */
+.marketing-services .service-row.reverse {
+  direction: rtl;
+}
+
+.marketing-services .service-row.reverse * {
+  direction: ltr;
+}
+
+/* Images */
+.marketing-services img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+/* Text */
+.service-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-content p {
+  opacity: 0.85;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .marketing-services .service-row {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================
+   STEP 6 – COMPARISON
+   ===================== */
+
+.comparison {
+  background: rgba(255,255,255,0.02);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Boxes */
+.comparison-box {
+  background: rgba(255,255,255,0.05);
+  padding: 2.5rem;
+  border-radius: 1rem;
+}
+
+.comparison-box.alt {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Headings */
+.comparison-box h4 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+/* List */
+.comparison-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-box li {
+  margin-bottom: 0.6rem;
+  opacity: 0.9;
+}
+/* =====================
+   STEP 7 – PROCESS
+   ===================== */
+
+.process {
+  background: rgba(255,255,255,0.03);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.process-steps div {
+  background: rgba(255,255,255,0.05);
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+}
+
+/* Numbers */
+.process-steps span {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+/* Titles */
+.process-steps h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.process-steps p {
+  opacity: 0.85;
+}
+/* =====================
+   STEP 8 – FINAL CTA
+   ===================== */
+
+.cta.dark {
+  background: linear-gradient(135deg, #0e1630, #060a14);
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+.cta.dark h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.cta.dark p {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+/* Button polish */
+.btn-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+}
+</style>
 
   <style>
     :root{
@@ -541,25 +774,21 @@ section {
 <main class="page-wrapper">
 
   <!-- ================= HERO ================= -->
-  <section class="hero marketing-hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <h1>Book Marketing Services</h1>
-        <p>
-          Strategic book marketing designed to increase visibility,
-          credibility, and long-term growth — without shortcuts.
-        </p>
+ <section class="hero marketing-hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1>Book Marketing Services</h1>
+      <p>
+        Strategic book marketing designed to increase visibility,
+        credibility, and long-term growth — without shortcuts.
+      </p>
 
-        <a href="index.html#contact" class="btn btn-primary">
-          Get a Marketing Plan
-        </a>
-      </div>
-
-      <div class="hero-image">
-        <img src="assets/images/book-marketing-hero.png" alt="Book Marketing">
-      </div>
+      <a href="index.html#contact" class="btn btn-primary">
+        Get a Marketing Plan
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ================= INTRO ================= -->
   <section class="section">
