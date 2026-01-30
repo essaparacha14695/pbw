@@ -510,6 +510,57 @@ section {
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
 }
+/* =====================
+   HERO IMAGE ENHANCEMENT
+   ===================== */
+
+/* Brighten background image */
+.hero {
+  position: relative;
+}
+
+/* Reduce darkness of overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 8, 15, 0.55),
+    rgba(5, 8, 15, 0.65)
+  );
+  z-index: 1;
+}
+
+/* Ensure content stays above overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Make image feel sharper & richer */
+.hero {
+  background-size: cover;
+  background-position: center;
+  filter: brightness(1.15) contrast(1.1) saturate(1.1);
+}
+/* =====================
+   HERO BUTTON FIX
+   ===================== */
+
+.hero .btn-primary {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  z-index: 3;
+}
+
+/* Strong hover feedback */
+.hero .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(212, 175, 55, 0.35);
+}
+
 </style>
 
   <style>
