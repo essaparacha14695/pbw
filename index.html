@@ -1074,24 +1074,21 @@
     type="text"
     name="entry.514100272"
     placeholder="Full Name *"
-    required
   >
 
   <input
     type="email"
     name="entry.1596640557"
     placeholder="Email Address *"
-    required
   >
 
   <input
     type="tel"
     name="entry.1516043336"
     placeholder="Phone No. *"
-    required
   >
 
-  <select name="entry.2021312248" required>
+  <select name="entry.2021312248" >
     <option value="">Select a Service *</option>
     <option value="Ghostwriting">Ghostwriting</option>
     <option value="Editing">Editing</option>
@@ -1109,7 +1106,12 @@
   <button type="submit">SUBMIT</button>
 </form>
 
-<iframe name="hidden_iframe" style="display:none;"></iframe>
+<iframe
+  name="hidden_iframe"
+  id="hidden_iframe"
+  style="display:none;"
+  onload="formSubmitted()"
+></iframe>
 
   </div>
 </div>
@@ -1131,6 +1133,19 @@ function showSuccess() {
     alert("Thank you! We received your request.");
   }, 500);
 }
+</script>
+<script>
+let submitted = false;
+
+function formSubmitted() {
+  if (submitted) {
+    document.getElementById("successMsg").style.display = "block";
+  }
+}
+
+document.querySelector("form").addEventListener("submit", function () {
+  submitted = true;
+});
 </script>
 </body>
 </html>
