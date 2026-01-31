@@ -1055,7 +1055,7 @@
     })();
   </script>
 <!-- First Visit Popup -->
-<div id="firstVisitModal" class="fv-overlay">
+<div id="firstVisitModal" class="fv-overlay" style="display:none;">
   <div class="fv-modal">
     <button class="fv-close" onclick="closeFVModal()">×</button>
 
@@ -1065,53 +1065,64 @@
       into a multi-million dollar reality. It’s Free!
     </p>
 
-<form
-  action="https://docs.google.com/forms/d/e/1FAIpQLSdHPv7CWHPf3IRj5EXOWhYmjEEQgquDn0VURTDAfHqGsdcN7w/formResponse"
-  method="POST"
-  target="hidden_iframe"
->
-  <input
-    type="text"
-    name="entry.514100272"
-    placeholder="Full Name *"
-  >
+    <form
+      id="quoteForm"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSdHPv7CWHPf3IRj5EXOWhYmjEEQgquDn0VURTDAfHqGsdcN7w/formResponse"
+      method="POST"
+      target="hidden_iframe"
+    >
+      <input
+        type="text"
+        name="entry.514100272"
+        placeholder="Full Name *"
+        required
+      >
 
-  <input
-    type="email"
-    name="entry.1596640557"
-    placeholder="Email Address *"
-  >
+      <input
+        type="email"
+        name="entry.1596640557"
+        placeholder="Email Address *"
+        required
+      >
 
-  <input
-    type="tel"
-    name="entry.1516043336"
-    placeholder="Phone No. *"
-  >
+      <input
+        type="tel"
+        name="entry.1516043336"
+        placeholder="Phone No. *"
+        required
+      >
 
-  <select name="entry.2021312248" >
-    <option value="">Select a Service *</option>
-    <option value="Ghostwriting">Ghostwriting</option>
-    <option value="Editing">Editing</option>
-    <option value="Publishing">Publishing</option>
-    <option value="Book Marketing">Book Marketing</option>
-    <option value="Cover Design">Cover Design</option>
-    <option value="Other">Other</option>
-  </select>
+      <select name="entry.2021312248" required>
+        <option value="" disabled selected>Select a Service *</option>
+        <option value="Ghostwriting">Ghostwriting</option>
+        <option value="Editing">Editing</option>
+        <option value="Publishing">Publishing</option>
+        <option value="Book Marketing">Book Marketing</option>
+        <option value="Cover Design">Cover Design</option>
+        <option value="Other">Other</option>
+      </select>
 
-  <textarea
-    name="entry.283609773"
-    placeholder="Enter a description"
-  ></textarea>
+      <textarea
+        name="entry.283609773"
+        placeholder="Enter a description"
+        required
+      ></textarea>
 
-  <button type="submit">SUBMIT</button>
-</form>
+      <button type="submit">SUBMIT</button>
+    </form>
 
-<iframe
-  name="hidden_iframe"
-  id="hidden_iframe"
-  style="display:none;"
-  onload="formSubmitted()"
-></iframe>
+    <!-- Success message -->
+    <div id="successMsg" style="display:none;">
+      <h3>Thank you!</h3>
+      <p>We’ve received your request and will contact you shortly.</p>
+    </div>
+
+    <iframe
+      name="hidden_iframe"
+      id="hidden_iframe"
+      style="display:none;"
+      onload="formSubmitted()"
+    ></iframe>
 
   </div>
 </div>
@@ -1146,6 +1157,33 @@ function formSubmitted() {
 document.querySelector("form").addEventListener("submit", function () {
   submitted = true;
 });
+</script>
+<script>
+/* Popup logic */
+document.addEventListener("DOMContentLoaded", function () {
+  if (!localStorage.getItem("visited")) {
+    document.getElementById("firstVisitModal").style.display = "flex";
+    localStorage.setItem("visited", "true");
+  }
+});
+
+function closeFVModal() {
+  document.getElementById("firstVisitModal").style.display = "none";
+}
+
+/* Google Form submit detection */
+let submitted = false;
+
+document.getElementById("quoteForm").addEventListener("submit", function () {
+  submitted = true;
+});
+
+function formSubmitted() {
+  if (submitted) {
+    document.getElementById("quoteForm").style.display = "none";
+    document.getElementById("successMsg").style.display = "block";
+  }
+}
 </script>
 </body>
 </html>
