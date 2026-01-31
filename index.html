@@ -1065,33 +1065,52 @@
       into a multi-million dollar reality. It’s Free!
     </p>
 
-    <form
+<form
   action="https://docs.google.com/forms/d/e/1FAIpQLSdHPv7CWHPf3IRj5EXOWhYmjEEQgquDn0VURTDAfHqGsdcN7w/formResponse"
   method="POST"
   target="hidden_iframe"
-  onsubmit="this.submit();"
 >
-      <input type="text" name="entry.2005620554" placeholder="Full Name *" required>
-      <input type="email" placeholder="Email Address *" required />
-      <input type="tel" name="entry.1166974658" placeholder="Phone No. *" required>
+  <input
+    type="text"
+    name="entry.514100272"
+    placeholder="Full Name *"
+    required
+  >
 
+  <input
+    type="email"
+    name="entry.1596640557"
+    placeholder="Email Address *"
+    required
+  >
 
-      <select name="entry.1065046570" required>
-        <option value="">Select a Service *</option>
-        <option>Ghostwriting</option>
-        <option>Editing</option>
-        <option>Publishing</option>
-        <option>Book Marketing</option>
-        <option value="Cover Design">Cover Design</option>
-        <option value="Other">Other</option>
-      </select>
+  <input
+    type="tel"
+    name="entry.1516043336"
+    placeholder="Phone No. *"
+    required
+  >
 
-      <textarea name="entry.839337160" placeholder="Enter a description"></textarea>
+  <select name="entry.2021312248" required>
+    <option value="">Select a Service *</option>
+    <option value="Ghostwriting">Ghostwriting</option>
+    <option value="Editing">Editing</option>
+    <option value="Publishing">Publishing</option>
+    <option value="Book Marketing">Book Marketing</option>
+    <option value="Cover Design">Cover Design</option>
+    <option value="Other">Other</option>
+  </select>
 
+  <textarea
+    name="entry.283609773"
+    placeholder="Enter a description"
+  ></textarea>
 
-      <button type="submit">SUBMIT</button>
-    </form>
+  <button type="submit">SUBMIT</button>
+</form>
+
 <iframe name="hidden_iframe" style="display:none;"></iframe>
+
   </div>
 </div>
 <script>
@@ -1106,6 +1125,12 @@ function closeFVModal() {
   document.getElementById("firstVisitModal").style.display = "none";
 }
 </script>
-
+<script>
+function showSuccess() {
+  setTimeout(function () {
+    alert("Thank you! We received your request.");
+  }, 500);
+}
+</script>
 </body>
 </html>
