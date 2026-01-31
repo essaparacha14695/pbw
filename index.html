@@ -206,6 +206,80 @@
 }
 
 </style>
+<style>
+.fv-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.fv-modal {
+  background: #0b0b0b;
+  color: #fff;
+  width: 420px;
+  max-width: 90%;
+  padding: 30px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.fv-modal h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.fv-modal p {
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 18px;
+}
+
+.fv-modal input,
+.fv-modal select,
+.fv-modal textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.fv-modal textarea {
+  resize: none;
+  height: 80px;
+}
+
+.fv-modal button[type="submit"] {
+  width: 100%;
+  background: #1e40ff;
+  border: none;
+  padding: 12px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.fv-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+</style>
+
 </head>
 
 <body>
@@ -980,6 +1054,48 @@
       requestAnimationFrame(tick);
     })();
   </script>
+<!-- First Visit Popup -->
+<div id="firstVisitModal" class="fv-overlay">
+  <div class="fv-modal">
+    <button class="fv-close" onclick="closeFVModal()">×</button>
+
+    <h2>GET A FREE QUOTE!</h2>
+    <p>
+      Discuss your book idea with our consultants and we’ll help you transform it
+      into a multi-million dollar reality. It’s Free!
+    </p>
+
+    <form>
+      <input type="text" placeholder="Full Name *" required />
+      <input type="email" placeholder="Email Address *" required />
+      <input type="tel" placeholder="Phone No. *" required />
+
+      <select required>
+        <option value="">Select a Service *</option>
+        <option>Ghostwriting</option>
+        <option>Editing</option>
+        <option>Publishing</option>
+        <option>Book Marketing</option>
+      </select>
+
+      <textarea placeholder="Enter a description"></textarea>
+
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (!localStorage.getItem("visited")) {
+    document.getElementById("firstVisitModal").style.display = "flex";
+    localStorage.setItem("visited", "true");
+  }
+});
+
+function closeFVModal() {
+  document.getElementById("firstVisitModal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
