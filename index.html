@@ -1065,12 +1065,12 @@
       into a multi-million dollar reality. It’s Free!
     </p>
 
-    <form
-      id="quoteForm"
-      action="https://docs.google.com/forms/d/e/1FAIpQLSdHPv7CWHPf3IRj5EXOWhYmjEEQgquDn0VURTDAfHqGsdcN7w/formResponse"
-      method="POST"
-      target="hidden_iframe"
-    >
+   <form
+  id="quoteForm"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSdHPv7CWHPf3IRj5EXOWhYmjEEQgquDn0VURTDAfHqGsdcN7w/formResponse"
+  method="POST"
+  target="hidden_iframe"
+>
       <input
         type="text"
         name="entry.514100272"
@@ -1117,12 +1117,11 @@
       <p>We’ve received your request and will contact you shortly.</p>
     </div>
 
-    <iframe
-      name="hidden_iframe"
-      id="hidden_iframe"
-      style="display:none;"
-      onload="formSubmitted()"
-    ></iframe>
+   <iframe
+  name="hidden_iframe"
+  id="hidden_iframe"
+  style="display:none;"
+></iframe>
 
   </div>
 </div>
@@ -1191,6 +1190,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // FORCE popup for now (testing)
   document.getElementById("firstVisitModal").style.display = "flex";
 });
+</script>
+<script>
+(function () {
+  let submitted = false;
+
+  const form = document.getElementById("quoteForm");
+  const iframe = document.getElementById("hidden_iframe");
+  const successMsg = document.getElementById("successMsg");
+
+  if (!form || !iframe) return;
+
+  form.addEventListener("submit", function () {
+    submitted = true;
+  });
+
+  iframe.addEventListener("load", function () {
+    if (submitted) {
+      form.style.display = "none";
+      successMsg.style.display = "block";
+    }
+  });
+})();
 </script>
 </body>
 </html>
