@@ -1065,51 +1065,58 @@
       into a multi-million dollar reality. It’s Free!
     </p>
 
-   <form
+<form
   id="quoteForm"
   action="https://docs.google.com/forms/d/e/1FAIpQLSdHPv7CWHPf3IRj5EXOWhYmjEEQgquDn0VURTDAfHqGsdcN7w/formResponse"
   method="POST"
   target="hidden_iframe"
 >
-      <input
-        type="text"
-        name="entry.514100272"
-        placeholder="Full Name *"
-        required
-      >
+  <!-- REQUIRED GOOGLE META -->
+  <input type="hidden" name="fvv" value="1">
+  <input type="hidden" name="draftResponse" value="[null,null,&quot;-987654321987654321&quot;]">
+  <input type="hidden" name="pageHistory" value="0">
+  <input type="hidden" name="fbzx" value="-987654321987654321">
 
-      <input
-        type="email"
-        name="entry.1596640557"
-        placeholder="Email Address *"
-        required
-      >
+  <!-- YOUR FIELDS -->
+  <input
+    type="text"
+    name="entry.514100272"
+    placeholder="Full Name *"
+    required
+  >
 
-      <input
-        type="tel"
-        name="entry.1516043336"
-        placeholder="Phone No. *"
-        required
-      >
+  <input
+    type="email"
+    name="entry.1596640557"
+    placeholder="Email Address *"
+    required
+  >
 
-      <select name="entry.2021312248" required>
-        <option value="" disabled selected>Select a Service *</option>
-        <option value="Ghostwriting">Ghostwriting</option>
-        <option value="Editing">Editing</option>
-        <option value="Publishing">Publishing</option>
-        <option value="Book Marketing">Book Marketing</option>
-        <option value="Cover Design">Cover Design</option>
-        <option value="Other">Other</option>
-      </select>
+  <input
+    type="tel"
+    name="entry.1516043336"
+    placeholder="Phone No. *"
+    required
+  >
 
-      <textarea
-        name="entry.283609773"
-        placeholder="Enter a description"
-        required
-      ></textarea>
+  <select name="entry.2021312248" required>
+    <option value="" disabled selected>Select a Service *</option>
+    <option value="Ghostwriting">Ghostwriting</option>
+    <option value="Editing">Editing</option>
+    <option value="Publishing">Publishing</option>
+    <option value="Book Marketing">Book Marketing</option>
+    <option value="Cover Design">Cover Design</option>
+    <option value="Other">Other</option>
+  </select>
 
-      <button type="submit">SUBMIT</button>
-    </form>
+  <textarea
+    name="entry.283609773"
+    placeholder="Enter a description"
+    required
+  ></textarea>
+
+  <button type="submit">SUBMIT</button>
+</form>
 
     <!-- Success message -->
     <div id="successMsg" style="display:none;">
