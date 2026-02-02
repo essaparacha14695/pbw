@@ -1062,7 +1062,6 @@ window.handleSubmit = handleSubmit;
       requestAnimationFrame(tick);
     })();
   </script>
-
 <!-- First Visit Popup -->
 <div id="firstVisitModal" class="fv-overlay" style="display:none;">
   <div class="fv-modal">
@@ -1074,17 +1073,48 @@ window.handleSubmit = handleSubmit;
       into a multi-million dollar reality. It’s Free!
     </p>
 
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdHPv7CWHPf3IRj5EXOWhYmjEEQgquDn0VURTDAfHqGsdcN7w/viewform?embedded=true"
-      width="100%"
-      height="560"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      style="border:none; border-radius:14px;"
-    >
-      Loading…
-    </iframe>
+    <!-- ✅ THIS IS YOUR FORM -->
+    <form id="quoteForm">
+
+      <input
+        type="text"
+        name="fullName"
+        placeholder="Full Name *"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address *"
+        required
+      >
+
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone No. *"
+        required
+      >
+
+      <select name="service" required>
+        <option value="">Select a Service *</option>
+        <option>Ghostwriting</option>
+        <option>Editing</option>
+        <option>Publishing</option>
+        <option>Book Marketing</option>
+        <option>Cover Design</option>
+        <option>Other</option>
+      </select>
+
+      <textarea
+        name="description"
+        placeholder="Enter a description"
+        required
+      ></textarea>
+
+      <button type="submit">SUBMIT</button>
+    </form>
 
   </div>
 </div>
@@ -1177,5 +1207,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 })();
 </script>
+<script>
+document.getElementById("quoteForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const form = this;
+  const formData = new FormData(form);
+
+  try {
+    await fetch("https://script.google.com/a/macros/thinktechnologies.net/s/AKfycbz8zEtb7OQcgXuWYF5Qm7Yp66qO4d1cSrrj7VxzmgAUdo0D8Yc0L04Q00uUZpSCJGH55g/exec", {
+      method: "POST",
+      body: formData
+    });
+
+    form.reset();
+    alert("Thank you! We’ll contact you shortly.");
+
+    closeFVModal(); // closes popup if you want
+
+  } catch (error) {
+    alert("Submission failed. Please try again.");
+  }
+});
+</script>
+
+
 </body>
 </html>
