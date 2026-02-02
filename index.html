@@ -843,7 +843,6 @@
             </div>
 
             <div class="p-7 sm:p-10 lg:p-12 bg-black/10">
-              <form class="glass rounded-[2rem] p-6 sm:p-8" onsubmit="return handleSubmit(event)">
                 <div class="grid gap-4">
                   <div class="grid sm:grid-cols-2 gap-4">
                     <div>
@@ -971,16 +970,18 @@
     if (saved) applyTheme(saved);
 
     function handleSubmit(e) {
-      e.preventDefault();
-      const msg = document.getElementById('formMsg');
-      msg.classList.remove('hidden');
-      msg.classList.remove('text-red-300');
-      msg.classList.add('text-emerald-300');
-      msg.textContent = "✅ Thanks! Your message has been sent (demo).";
-      e.target.reset();
-      return false;
-    }
-    window.handleSubmit = handleSubmit;
+  const msg = document.getElementById('formMsg');
+
+  // show success AFTER submit starts
+  setTimeout(() => {
+    msg.classList.remove('hidden');
+    msg.classList.remove('text-red-300');
+    msg.classList.add('text-emerald-300');
+    msg.textContent = "✅ Thanks! Your message has been sent.";
+    e.target.reset();
+  }, 700);
+}
+window.handleSubmit = handleSubmit;
 
     function openChat() {
       alert("Live chat is not connected yet. Tell me which chat you want (Tawk.to or Crisp) and I’ll add it.");
@@ -1067,9 +1068,11 @@
 
 <form
   id="quoteForm"
+  class="glass rounded-[2rem] p-6 sm:p-8"
   action="https://docs.google.com/forms/d/e/1FAIpQLSdHPv7CWHPf3IRj5EXOWhYmjEEQgquDn0VURTDAfHqGsdcN7w/formResponse"
   method="POST"
   target="hidden_iframe"
+  onsubmit="handleSubmit(event)"
 >
   <!-- REQUIRED GOOGLE META -->
   <input type="hidden" name="fvv" value="1">
