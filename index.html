@@ -1074,47 +1074,26 @@ window.handleSubmit = handleSubmit;
     </p>
 
     <!-- ✅ THIS IS YOUR FORM -->
-    <form id="quoteForm">
+<form id="quoteForm">
+  <input type="text" name="fullName" required>
+  <input type="email" name="email" required>
+  <input type="tel" name="phone" required>
 
-      <input
-        type="text"
-        name="fullName"
-        placeholder="Full Name *"
-        required
-      >
+  <select name="service" required>
+    <option value="">Select a Service *</option>
+    <option>Ghostwriting</option>
+    <option>Editing</option>
+    <option>Publishing</option>
+    <option>Book Marketing</option>
+    <option>Cover Design</option>
+    <option>Other</option>
+  </select>
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email Address *"
-        required
-      >
+  <textarea name="description" required></textarea>
 
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone No. *"
-        required
-      >
+  <button type="submit">SUBMIT</button>
+</form>
 
-      <select name="service" required>
-        <option value="">Select a Service *</option>
-        <option>Ghostwriting</option>
-        <option>Editing</option>
-        <option>Publishing</option>
-        <option>Book Marketing</option>
-        <option>Cover Design</option>
-        <option>Other</option>
-      </select>
-
-      <textarea
-        name="description"
-        placeholder="Enter a description"
-        required
-      ></textarea>
-
-      <button type="submit">SUBMIT</button>
-    </form>
 
   </div>
 </div>
